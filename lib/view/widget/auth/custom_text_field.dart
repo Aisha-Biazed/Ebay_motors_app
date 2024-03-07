@@ -1,3 +1,4 @@
+import 'package:ebay_motors/core/constant/color_scheme/color_manger.dart';
 import 'package:ebay_motors/core/shared/custom_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -48,47 +49,40 @@ class CustomTextField extends StatelessWidget {
               : null,
           labelStyle: labelStyle ??
               context.textTheme.labelSmall?.copyWith(
-                color: Color(0xFFBEBEBE),
-                // color: context.colorScheme.surfaceVariant,
+                color: ColorManager.onSurfaceVariant,
               ),
 
           hintText: hintText,
           hintStyle: hintStyle ??
               context.textTheme.labelSmall?.copyWith(
-                color: Color(0xffF1F1F1),
-                // color: context.colorScheme.onPrimaryContainer,
+                color: ColorManager.onPrimaryContainer,
               ),
           floatingLabelAlignment: FloatingLabelAlignment.start,
           hintMaxLines: hintMaxLines,
           isDense: true,
           contentPadding: REdgeInsetsDirectional.only(
               end: 16.w, start: 16.w, top: 70.h, bottom: 0.h),
-          fillColor: Color(0xFFFFFFFF),
-          // fillColor: context.colorScheme.surface,
-          focusColor: Color(0xFFFFFFFF),
-          // focusColor: context.colorScheme.surface,
+          fillColor: ColorManager.surface,
+          focusColor: ColorManager.surface,
           // alignLabelWithHint: alignLabelWithHint,
           suffixIcon: suffixIcon,
           prefixIconConstraints:
               BoxConstraints(maxHeight: 40.h, minHeight: 10.h, minWidth: 40.w),
           prefixIcon: prefixIcon,
           border: OutlineInputBorder(
-            borderSide: BorderSide(color: Color(0xFF121A25)),
-            // borderSide: BorderSide(color: context.colorScheme.outline),
+            borderSide: BorderSide(color: ColorManager.outline),
             borderRadius: BorderRadius.circular(28.r),
           ),
           disabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Color(0xFF121A25)),
-            // borderSide: BorderSide(color: context.colorScheme.outline),
+            borderSide: BorderSide(color: ColorManager.outline),
             borderRadius: BorderRadius.circular(28.r),
           ),
           enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Color(0xFFBEBEBE)),
-            // borderSide: BorderSide(color: context.colorScheme.onSurfaceVariant),
+            borderSide: BorderSide(color: ColorManager.onSurfaceVariant),
             borderRadius: BorderRadius.circular(28.r),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Color(0xff199DC3)),
+            borderSide: const BorderSide(color: Color(0xff199DC3)),
             // borderSide: BorderSide(color: context.colorScheme.primary),
             borderRadius: BorderRadius.circular(28.r),
           ),

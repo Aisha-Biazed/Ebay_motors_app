@@ -1,4 +1,5 @@
 import 'package:ebay_motors/core/constant/color_scheme/color_manger.dart';
+import 'package:ebay_motors/core/constant/router/app_routes.dart';
 import 'package:ebay_motors/core/shared/custom_button_widget.dart';
 import 'package:ebay_motors/core/shared/custom_text.dart';
 import 'package:ebay_motors/view/screen/auth/register_screen.dart';
@@ -18,6 +19,7 @@ class LoginScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: ListView(
         children: [
           UPLogoWidget(
@@ -58,7 +60,7 @@ class LoginScreen extends StatelessWidget {
               CustomButton(
                   textButton: "Login",
                   onPressed: () {
-                    Get.to(() => RegisterScreen());
+                    Get.toNamed(AppRoute.register);
                   }),
               const CustomText(
                 txt: "Forget password?",

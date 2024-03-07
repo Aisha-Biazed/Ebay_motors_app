@@ -1,9 +1,10 @@
-import 'package:ebay_motors/routes.dart';
-import 'package:ebay_motors/view/screen/auth/login_screen.dart';
-import 'package:ebay_motors/view/screen/splash/splash_screen.dart';
+import 'package:ebay_motors/core/constant/router/routes.dart';
+import 'package:ebay_motors/view/screen/filter/filter_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+
+import 'core/constant/router/app_routes.dart';
 
 class App extends StatelessWidget {
   const App({Key? key}) : super(key: key);
@@ -15,10 +16,10 @@ class App extends StatelessWidget {
       minTextAdapt: false,
       splitScreenMode: true,
       child: Builder(builder: (context) {
-        return const GetMaterialApp(
+        return GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          home: LoginScreen(),
-          // getPages: routes,
+          initialRoute: AppRoute.login,
+          getPages: routes,
         );
       }),
     );

@@ -1,3 +1,4 @@
+import 'package:ebay_motors/core/constant/router/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_core/src/get_main.dart';
@@ -16,35 +17,36 @@ class CompleteRegistrationScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        resizeToAvoidBottomInset: false,
         body: SafeArea(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          80.verticalSpace,
-          20.verticalSpace,
-          AppImage.asset(
-            Assets.imagesRegisterImgage,
-            fit: BoxFit.fill,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              80.verticalSpace,
+              20.verticalSpace,
+              AppImage.asset(
+                Assets.imagesRegisterImgage,
+                fit: BoxFit.fill,
+              ),
+              const CustomFormWidget(labelText: "Bank name"),
+              const CustomFormWidget(labelText: "Bank Holder's Name"),
+              const CustomFormWidget(
+                labelText: "Account number",
+              ),
+              const CustomFormWidget(
+                labelText: "Phone number",
+              ),
+              40.verticalSpace,
+              CustomButton(
+                onPressed: () {
+                  Get.toNamed(AppRoute.navigation);
+                },
+                textButton: "Login",
+              ),
+              80.verticalSpace,
+              const CustomText(txt: "Skip for now >")
+            ],
           ),
-          const CustomFormWidget(labelText: "Bank name"),
-          const CustomFormWidget(labelText: "Bank Holder's Name"),
-          const CustomFormWidget(
-            labelText: "Account number",
-          ),
-          const CustomFormWidget(
-            labelText: "Phone number",
-          ),
-          40.verticalSpace,
-          CustomButton(
-            onPressed: () {
-              Get.to(() => HomeScreen());
-            },
-            textButton: "Login",
-          ),
-          80.verticalSpace,
-          const CustomText(txt: "Skip for now >")
-        ],
-      ),
-    ));
+        ));
   }
 }

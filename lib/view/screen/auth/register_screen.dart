@@ -1,3 +1,4 @@
+import 'package:ebay_motors/core/constant/router/app_routes.dart';
 import 'package:ebay_motors/core/shared/app_image.dart';
 import 'package:ebay_motors/core/shared/custom_text.dart';
 import 'package:ebay_motors/generated/assets.dart';
@@ -15,45 +16,46 @@ class RegisterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        resizeToAvoidBottomInset: false,
         body: SafeArea(
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          50.verticalSpace,
-          CustomText(
-            txt: "Create your account",
-            fontSize: 30.sp,
-            fontWeight: FontWeight.w600,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              50.verticalSpace,
+              CustomText(
+                txt: "Create your account",
+                fontSize: 30.sp,
+                fontWeight: FontWeight.w600,
+              ),
+              20.verticalSpace,
+              AppImage.asset(
+                Assets.imagesRegisterImgage,
+                fit: BoxFit.fill,
+              ),
+              const CustomFormWidget(labelText: "Full name*"),
+              const CustomFormWidget(
+                labelText: "Birthday",
+                suffix: Icon(Icons.calendar_month_outlined),
+              ),
+              const CustomFormWidget(
+                labelText: "Email*",
+              ),
+              const CustomFormWidget(
+                labelText: "Password*",
+                suffix: Icon(Icons.visibility),
+              ),
+              const CustomFormWidget(
+                labelText: "Confirm password*",
+                suffix: Icon(Icons.visibility),
+              ),
+              CustomButton(
+                onPressed: () {
+                  Get.toNamed(AppRoute.completeRegister);
+                },
+                textButton: "Next",
+              ),
+            ],
           ),
-          20.verticalSpace,
-          AppImage.asset(
-            Assets.imagesRegisterImgage,
-            fit: BoxFit.fill,
-          ),
-          const CustomFormWidget(labelText: "Full name*"),
-          const CustomFormWidget(
-            labelText: "Birthday",
-            suffix: Icon(Icons.calendar_month_outlined),
-          ),
-          const CustomFormWidget(
-            labelText: "Email*",
-          ),
-          const CustomFormWidget(
-            labelText: "Password*",
-            suffix: Icon(Icons.visibility),
-          ),
-          const CustomFormWidget(
-            labelText: "Confirm password*",
-            suffix: Icon(Icons.visibility),
-          ),
-          CustomButton(
-            onPressed: () {
-              Get.to(() => CompleteRegistrationScreen());
-            },
-            textButton: "Next",
-          ),
-        ],
-      ),
-    ));
+        ));
   }
 }
