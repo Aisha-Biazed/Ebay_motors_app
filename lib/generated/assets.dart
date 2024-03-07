@@ -7,6 +7,7 @@ class Assets {
       'assets/fonts/Almarai-ExtraBold.ttf';
   static const String fontsAlmaraiLight = 'assets/fonts/Almarai-Light.ttf';
   static const String fontsAlmaraiRegular = 'assets/fonts/Almarai-Regular.ttf';
+  static const String imagesBMW = 'assets/images/BMW.png';
   static const String imagesCar2 = 'assets/images/car_2.png';
   static const String imagesCar3 = 'assets/images/car_3.png';
   static const String imagesCar4 = 'assets/images/car_4.png';

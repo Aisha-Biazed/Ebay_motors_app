@@ -14,7 +14,7 @@ class CustomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: REdgeInsets.symmetric(horizontal: 28.w, vertical: 20.h),
+      padding: REdgeInsets.symmetric(horizontal: 0.w, vertical: 20.h),
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
             fixedSize: Size.fromHeight(56.h),
@@ -26,7 +26,7 @@ class CustomButton extends StatelessWidget {
         onPressed: onPressed,
         child: CustomText(
           txt: textButton,
-          txtColor: ColorManager.dark,
+          txtColor: ColorManager.grey,
         ),
       ),
     );

@@ -7,6 +7,7 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../../core/constant/color_scheme/color_manger.dart';
 import '../../../core/shared/app_image.dart';
+import '../../../core/shared/custom_appbar_widget.dart';
 import '../../../core/shared/navigation_widget.dart';
 import '../../../generated/assets.dart';
 
@@ -45,11 +46,8 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
     );
 
     return Scaffold(
-      appBar: AppBar(
-        title: CustomText(
-          txt: title,
-        ),
-        centerTitle: true,
+      appBar: const CustomAppBar(
+        title: 'Cart Details',
       ),
       // bottomNavigationBar: const CustomBottomNavigationBar(),
       body: SafeArea(

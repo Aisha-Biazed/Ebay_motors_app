@@ -1,3 +1,4 @@
+import 'package:ebay_motors/core/constant/color_scheme/color_manger.dart';
 import 'package:ebay_motors/core/constant/router/app_routes.dart';
 import 'package:ebay_motors/core/shared/custom_text.dart';
 import 'package:ebay_motors/generated/assets.dart';
@@ -6,17 +7,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
+import '../../../core/shared/custom_appbar_widget.dart';
+
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          centerTitle: true,
-          title: const CustomText(
-            txt: "Home",
-          ),
+        appBar: const CustomAppBar(
+          title: 'Home',
         ),
         body: SafeArea(
           child: Padding(
@@ -34,9 +34,15 @@ class HomeScreen extends StatelessWidget {
                       ),
                     ),
                     10.horizontalSpace,
-                    const Icon(
-                      Icons.filter_list_alt,
-                      size: 30,
+                    IconButton(
+                      icon: Icon(
+                        Icons.filter_list_alt,
+                        size: 30,
+                        color: ColorManager.grey,
+                      ),
+                      onPressed: () {
+                        Get.toNamed(AppRoute.filter);
+                      },
                     ),
                   ],
                 ),

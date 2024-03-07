@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 
+import '../../../core/constant/color_scheme/color_manger.dart';
 import '../../../core/shared/custom_text.dart';
 import 'custom_text_field.dart';
 
@@ -16,7 +18,7 @@ class CustomFormWidget extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CustomText(txt: labelText),
+          CustomText(txt: labelText, txtColor: ColorManager.grey),
           CustomTextField(
             suffixIcon: suffix,
           ),

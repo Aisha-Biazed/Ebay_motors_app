@@ -15,11 +15,7 @@ abstract class NavigationBarController extends GetxController {
 class NavigationBarControllerImp extends NavigationBarController {
   int currentpage = 0;
 
-  List<Widget> listPage = const [
-    SettingsScreen(),
-    HomeScreen(),
-    FilterScreen()
-  ];
+  List<Widget> listPage = const [SettingsScreen(), HomeScreen(), CartScreen()];
 
   List bottomappbar = [
     {"title": "n", "icon": Icons.settings_sharp},

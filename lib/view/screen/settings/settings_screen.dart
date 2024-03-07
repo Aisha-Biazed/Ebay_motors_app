@@ -11,10 +11,8 @@ class SettingsScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: CustomText(
-          txt: "Settings",
-        ),
+      appBar: const CustomAppBar(
+        title: 'Settings',
       ),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.center,

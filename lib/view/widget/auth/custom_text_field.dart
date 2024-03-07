@@ -40,6 +40,7 @@ class CustomTextField extends StatelessWidget {
     return RSizedBox(
       height: 90.h,
       child: TextFormField(
+        cursorColor: ColorManager.grey,
         readOnly: readOnly,
         decoration: InputDecoration(
           label: label != null
@@ -60,6 +61,7 @@ class CustomTextField extends StatelessWidget {
           floatingLabelAlignment: FloatingLabelAlignment.start,
           hintMaxLines: hintMaxLines,
           isDense: true,
+
           contentPadding: REdgeInsetsDirectional.only(
               end: 16.w, start: 16.w, top: 70.h, bottom: 0.h),
           fillColor: ColorManager.surface,
@@ -82,7 +84,7 @@ class CustomTextField extends StatelessWidget {
             borderRadius: BorderRadius.circular(28.r),
           ),
           focusedBorder: OutlineInputBorder(
-            borderSide: const BorderSide(color: Color(0xff199DC3)),
+            borderSide: BorderSide(color: ColorManager.primary),
             // borderSide: BorderSide(color: context.colorScheme.primary),
             borderRadius: BorderRadius.circular(28.r),
           ),

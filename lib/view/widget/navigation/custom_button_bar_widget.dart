@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../core/constant/color_scheme/color_manger.dart';
 
@@ -15,12 +16,20 @@ class ButtonBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialButton(
-      onPressed: onPressed,
-      child: Column(mainAxisSize: MainAxisSize.min, children: [
-        Icon(icondata,
-            color: active == true ? ColorManager.white : ColorManager.grey),
-      ]),
+    return Container(
+      height: 100,
+      width: 80,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(Radius.circular(50.r)),
+        color: active == true ? Colors.red : Colors.transparent,
+      ),
+      child: MaterialButton(
+        onPressed: onPressed,
+        child: Column(mainAxisSize: MainAxisSize.min, children: [
+          Icon(icondata,
+              color: active == true ? ColorManager.white : ColorManager.grey),
+        ]),
+      ),
     );
   }
 }

@@ -27,7 +27,7 @@ List<GetPage<dynamic>>? routes = [
     page: () => const CartScreen(),
   ),
 //Filter
-  GetPage(name: AppRoute.filter, page: () => const FilterScreen()),
+  GetPage(name: AppRoute.filter, page: () => FilterScreen()),
   //Home
   GetPage(name: AppRoute.home, page: () => const HomeScreen()),
   GetPage(

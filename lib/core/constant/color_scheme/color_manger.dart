@@ -36,4 +36,5 @@ class ColorManager {
   static Color onPrimaryContainer = HexColor('#F1F1F1');
   static Color secondary = HexColor('#121A25');
   static Color green = HexColor('#AF50FF');
+  static Color red = HexColor('#F44B26');
 }
