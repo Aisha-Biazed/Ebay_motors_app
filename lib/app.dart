@@ -1,5 +1,4 @@
 import 'package:ebay_motors/core/constant/router/routes.dart';
-import 'package:ebay_motors/view/screen/filter/filter_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -18,7 +17,7 @@ class App extends StatelessWidget {
       child: Builder(builder: (context) {
         return GetMaterialApp(
           debugShowCheckedModeBanner: false,
-          initialRoute: AppRoute.login,
+          initialRoute: AppRoute.splash,
           getPages: routes,
         );
       }),

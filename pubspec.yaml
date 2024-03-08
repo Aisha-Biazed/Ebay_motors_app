@@ -16,10 +16,20 @@ dependencies:
   flutter_svg: ^2.0.9
   cupertino_icons: ^1.0.2
   smooth_page_indicator: ^1.1.0
+  table_calendar: ^3.1.0
+  flutter_animate: ^4.2.0+1
+  animate_do: ^2.1.0
+  flutter_slidable: ^3.0.1
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_launcher_icons: ^0.13.1
+flutter_launcher_icons:
+  android: "launcher_icon"
+  ios: true
+  image_path: "assets/images/logo_app.png"
+  remove_alpha_ios: true
 
   flutter_lints: ^2.0.0
 

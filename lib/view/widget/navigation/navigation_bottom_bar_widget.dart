@@ -17,8 +17,9 @@ class NavigationBottomBarWidget extends StatelessWidget {
             // notchMargin: 50,
             child: Row(
               crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
+                20.horizontalSpace,
                 ...List.generate(controller.listPage.length + 1, ((index) {
                   int i = index > 2 ? index - 1 : index;
                   return index == 2
@@ -29,7 +30,8 @@ class NavigationBottomBarWidget extends StatelessWidget {
                             controller.changePage(i);
                           },
                           active: controller.currentpage == i ? true : false);
-                }))
+                })),
+                20.horizontalSpace,
               ],
             )));
   }

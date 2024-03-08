@@ -1,3 +1,4 @@
+import 'package:ebay_motors/core/constant/color_scheme/color_manger.dart';
 import 'package:ebay_motors/core/constant/router/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -43,8 +44,16 @@ class CompleteRegistrationScreen extends StatelessWidget {
                 },
                 textButton: "Login",
               ),
-              80.verticalSpace,
-              const CustomText(txt: "Skip for now >")
+              55.verticalSpace,
+              TextButton(
+                onPressed: () {
+                  Get.toNamed(AppRoute.navigation);
+                },
+                child: CustomText(
+                  txt: "Skip for now >",
+                  txtColor: ColorManager.grey,
+                ),
+              )
             ],
           ),
         ));

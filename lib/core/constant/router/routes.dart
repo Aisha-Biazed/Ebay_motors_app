@@ -1,4 +1,5 @@
 import 'package:ebay_motors/core/shared/navigation_screen.dart';
+import 'package:ebay_motors/model/car_details_model.dart';
 import 'package:ebay_motors/view/screen/auth/complete_registration_screen.dart';
 import 'package:ebay_motors/view/screen/auth/login_screen.dart';
 import 'package:ebay_motors/view/screen/auth/register_screen.dart';
@@ -13,11 +14,12 @@ import 'app_routes.dart';
 
 List<GetPage<dynamic>>? routes = [
   // GetPage(name: "/", page: () => const Language(), middlewares: [MyMiddleWare()]),
+
   //Splash
-  GetPage(name: AppRoute.splash, page: () => const SplashScreen()),
+  GetPage(name: AppRoute.splash, page: () => SplashScreen()),
 //  Auth
   GetPage(name: AppRoute.login, page: () => const LoginScreen()),
-  GetPage(name: AppRoute.register, page: () => const RegisterScreen()),
+  GetPage(name: AppRoute.register, page: () => RegisterScreen()),
   GetPage(
       name: AppRoute.completeRegister,
       page: () => const CompleteRegistrationScreen()),
@@ -32,8 +34,8 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoute.home, page: () => const HomeScreen()),
   GetPage(
     name: AppRoute.carDetails,
-    page: () => const CarDetailsScreen(),
-    arguments: const {"title": null, "subTile": null, "img": null},
+    arguments: {"title": null, "subTitle": null, "img": null},
+    page: () => CarDetailsScreen(),
   ),
   //Navigation
   GetPage(name: AppRoute.navigation, page: () => const NavigationScreen()),

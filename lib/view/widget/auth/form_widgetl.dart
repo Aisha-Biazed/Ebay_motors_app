@@ -7,9 +7,11 @@ import '../../../core/shared/custom_text.dart';
 import 'custom_text_field.dart';
 
 class CustomFormWidget extends StatelessWidget {
-  const CustomFormWidget({Key? key, required this.labelText, this.suffix})
+  const CustomFormWidget(
+      {Key? key, required this.labelText, this.suffix, this.hintText})
       : super(key: key);
   final String labelText;
+  final String? hintText;
   final Widget? suffix;
   @override
   Widget build(BuildContext context) {
@@ -21,6 +23,7 @@ class CustomFormWidget extends StatelessWidget {
           CustomText(txt: labelText, txtColor: ColorManager.grey),
           CustomTextField(
             suffixIcon: suffix,
+            hintText: hintText,
           ),
         ],
       ),

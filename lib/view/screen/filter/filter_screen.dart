@@ -6,8 +6,10 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_state_manager/src/simple/get_state.dart';
+import 'package:table_calendar/table_calendar.dart';
 
 import '../../../controller/range_slider_controller.dart';
+import '../../../controller/year_picker_controller.dart';
 import '../../../core/shared/custom_appbar_widget.dart';
 import '../../widget/auth/form_widgetl.dart';
 import '../../widget/navigation/navigation_bottom_bar_widget.dart';
@@ -16,6 +18,7 @@ import '../../../controller/navigation_bar_controller.dart';
 class FilterScreen extends StatelessWidget {
   FilterScreen({Key? key}) : super(key: key);
   final FilterController controller = Get.put(FilterController());
+  final YearPickerController c = Get.put(YearPickerController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,7 +36,6 @@ class FilterScreen extends StatelessWidget {
               const CustomFormWidget(
                 labelText: 'Company',
               ),
-              10.verticalSpace,
               const CustomText(txt: "Price", textAlign: TextAlign.start),
               RangeSlider(
                 activeColor: ColorManager.primary,
@@ -46,7 +48,6 @@ class FilterScreen extends StatelessWidget {
                     'min', 'max'), // Labels displayed above the sliders
                 onChanged: controller.updateValues,
               ),
-              10.verticalSpace,
               Card(
                 margin: REdgeInsetsDirectional.only(end: 28.w, start: 28.w),
                 child: ListTile(
@@ -60,11 +61,43 @@ class FilterScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              10.verticalSpace,
-              const CustomFormWidget(
-                labelText: 'Launch Year',
+              GetBuilder<YearPickerController>(builder: (controller) {
+                return CustomFormWidget(
+                  hintText: controller.selectedDate.toString(),
+                  labelText: 'Launch Year',
+                );
+              }),
+              20.verticalSpace,
+              Container(
+                height: 56,
+                child: GetBuilder<YearPickerController>(builder: (controller) {
+                  return TextButton(
+                    onPressed: () {
+                      Get.defaultDialog(
+                        title: "Select Year",
+                        content: Container(
+                          width: 300,
+                          height: 300,
+                          child: YearPicker(
+                            firstDate: DateTime(DateTime.now().year - 10, 1),
+                            lastDate: DateTime(DateTime.now().year, 1),
+                            selectedDate: controller.selectedDate,
+                            onChanged: (DateTime dateTime) {
+                              controller.selectedDate = dateTime;
+                              Get.back();
+                              controller.update();
+                            },
+                          ),
+                        ),
+                      );
+                    },
+                    child: CustomText(
+                      txt: "Click here to Select Years ",
+                      txtColor: ColorManager.grey,
+                    ),
+                  );
+                }),
               ),
-              10.verticalSpace,
               CustomButton(textButton: "Apply", onPressed: () {})
             ],
           );

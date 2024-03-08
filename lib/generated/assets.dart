@@ -13,7 +13,9 @@ class Assets {
   static const String imagesCar4 = 'assets/images/car_4.png';
   static const String imagesCar5 = 'assets/images/car_5.png';
   static const String imagesCar6 = 'assets/images/car_6.png';
+  static const String imagesLogoApp = 'assets/images/logo_app.png';
   static const String imagesRegisterImgage =
       'assets/images/register_imgage.png';
   static const String imagesSlide = 'assets/images/slide.png';
+  static const String imagesWarningIcon = 'assets/images/warning_icon.png';
 }

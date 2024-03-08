@@ -56,8 +56,9 @@ class CustomTextField extends StatelessWidget {
           hintText: hintText,
           hintStyle: hintStyle ??
               context.textTheme.labelSmall?.copyWith(
-                color: ColorManager.onPrimaryContainer,
-              ),
+                  color: ColorManager.primary,
+                  fontSize: 17.sp,
+                  fontFamily: 'Almarai'),
           floatingLabelAlignment: FloatingLabelAlignment.start,
           hintMaxLines: hintMaxLines,
           isDense: true,

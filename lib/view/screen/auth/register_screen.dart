@@ -9,9 +9,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:table_calendar/table_calendar.dart';
+
+import '../../../controller/year_picker_controller.dart';
+import '../../../core/constant/color_scheme/color_manger.dart';
 
 class RegisterScreen extends StatelessWidget {
-  const RegisterScreen({Key? key}) : super(key: key);
+  RegisterScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -33,9 +37,11 @@ class RegisterScreen extends StatelessWidget {
                 fit: BoxFit.fill,
               ),
               const CustomFormWidget(labelText: "Full name*"),
-              const CustomFormWidget(
+              CustomFormWidget(
                 labelText: "Birthday",
-                suffix: Icon(Icons.calendar_month_outlined),
+                suffix: IconButton(
+                    onPressed: () {},
+                    icon: Icon(Icons.calendar_month_outlined)),
               ),
               const CustomFormWidget(
                 labelText: "Email*",

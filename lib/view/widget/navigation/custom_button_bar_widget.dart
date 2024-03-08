@@ -17,17 +17,17 @@ class ButtonBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100,
-      width: 80,
+      height: 100.h,
+      width: 70.w,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.all(Radius.circular(50.r)),
-        color: active == true ? Colors.red : Colors.transparent,
+        borderRadius: BorderRadius.all(Radius.circular(200.r)),
+        color: active == true ? ColorManager.grey : Colors.transparent,
       ),
       child: MaterialButton(
         onPressed: onPressed,
         child: Column(mainAxisSize: MainAxisSize.min, children: [
           Icon(icondata,
-              color: active == true ? ColorManager.white : ColorManager.grey),
+              color: active == true ? ColorManager.primary : ColorManager.grey),
         ]),
       ),
     );

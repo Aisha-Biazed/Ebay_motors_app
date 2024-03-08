@@ -1,5 +1,6 @@
 import 'package:ebay_motors/core/shared/custom_button_widget.dart';
 import 'package:ebay_motors/core/shared/custom_text.dart';
+import 'package:ebay_motors/model/car_details_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
@@ -8,8 +9,8 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../../core/constant/color_scheme/color_manger.dart';
 import '../../../core/shared/app_image.dart';
 import '../../../core/shared/custom_appbar_widget.dart';
-import '../../../core/shared/navigation_widget.dart';
 import '../../../generated/assets.dart';
+import '../../widget/home/properties_car_details.dart';
 
 class CarDetailsScreen extends StatefulWidget {
   const CarDetailsScreen({Key? key}) : super(key: key);
@@ -20,31 +21,30 @@ class CarDetailsScreen extends StatefulWidget {
 
 class _CarDetailsScreenState extends State<CarDetailsScreen> {
   final controller = PageController(viewportFraction: 0.8, keepPage: true);
-
   final List<String> imageAssets = [
     Assets.imagesSlide,
     Assets.imagesSlide,
     Assets.imagesSlide,
     Assets.imagesSlide,
   ];
+
   @override
   Widget build(BuildContext context) {
     final Map<String, dynamic> arguments = Get.arguments ?? {};
     final String title = arguments['title'] ?? '';
-    final String subTitle = arguments['subTile'] ?? '';
+    final String subTitle = arguments['subTitle'] ?? '';
     final String img = arguments['img'] ?? '';
     final pages = List.generate(
-      img.length,
+      imageAssets.length,
       (index) => Container(
         margin: REdgeInsetsDirectional.only(start: 10),
         child: Center(
             child: AppImage.asset(
-          img,
+          imageAssets[0],
           fit: BoxFit.fill,
         )),
       ),
     );
-
     return Scaffold(
       appBar: const CustomAppBar(
         title: 'Cart Details',
@@ -82,18 +82,56 @@ class _CarDetailsScreenState extends State<CarDetailsScreen> {
                   children: [
                     Padding(
                       padding:
-                          REdgeInsetsDirectional.only(start: 28.w, end: 28.w),
-                      child: Column(
+                          REdgeInsetsDirectional.only(start: 40.w, end: 40.w),
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.center,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          ListTile(
-                            title: CustomText(
-                              txt: title,
-                            ),
-                            trailing: CustomText(
-                              txt: subTitle,
-                              txtColor: ColorManager.dark,
-                            ),
-                          ),
+                          PropertiesDetailsCar(),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.end,
+                            children: [
+                              CustomText(
+                                txt: title,
+                                txtColor: ColorManager.grey,
+                              ),
+                              10.verticalSpace,
+                              CustomText(
+                                txt: subTitle,
+                                txtColor: ColorManager.grey,
+                              ),
+                              10.verticalSpace,
+                              CustomText(
+                                txt: title,
+                                txtColor: ColorManager.grey,
+                              ),
+                              10.verticalSpace,
+                              CustomText(
+                                txt: subTitle,
+                                txtColor: ColorManager.grey,
+                              ),
+                              10.verticalSpace,
+                              CustomText(
+                                txt: title,
+                                txtColor: ColorManager.grey,
+                              ),
+                              10.verticalSpace,
+                              CustomText(
+                                txt: subTitle,
+                                txtColor: ColorManager.grey,
+                              ),
+                              10.verticalSpace,
+                              CustomText(
+                                txt: title,
+                                txtColor: ColorManager.grey,
+                              ),
+                              10.verticalSpace,
+                              CustomText(
+                                txt: subTitle,
+                                txtColor: ColorManager.grey,
+                              ),
+                            ],
+                          )
                         ],
                       ),
                     ),
