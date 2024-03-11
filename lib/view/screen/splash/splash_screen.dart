@@ -9,8 +9,7 @@ import '../../../core/shared/custom_text.dart';
 import '../../widget/up_logo_widget.dart';
 
 class SplashScreen extends StatelessWidget {
-  final SplashController _controller = Get.put(SplashController());
-
+  SplashController _controller = Get.find();
   @override
   Widget build(BuildContext context) {
     return Scaffold(

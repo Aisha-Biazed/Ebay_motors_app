@@ -17,8 +17,8 @@ import '../../../controller/navigation_bar_controller.dart';
 
 class FilterScreen extends StatelessWidget {
   FilterScreen({Key? key}) : super(key: key);
-  final FilterController controller = Get.put(FilterController());
-  final YearPickerController c = Get.put(YearPickerController());
+  FilterController controller = Get.find();
+  YearPickerController c = Get.find();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
